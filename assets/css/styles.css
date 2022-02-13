@@ -457,6 +457,11 @@ img {
   color: var(--text-color-light);
 }
 
+.skill__level {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
 .skills__arrow {
   margin-left: auto;
   transition: 0.4s;
@@ -503,7 +508,11 @@ img {
 }
 
 .skills__js {
-  width: 60%;
+  width: 75%;
+}
+
+.skills__php {
+  width: 80%;
 }
 
 .skills__react {
@@ -511,20 +520,24 @@ img {
 }
 
 /* ============= BAR SKILL 2 ============= */
-.skills__php {
-  width: 90%;
+.skills__bootstrap {
+  width: 75%;
 }
 
-.skills__node {
-  width: 80%;
-}
-
-.skills__firebase {
-  width: 60%;
-}
-
-.skills__python {
+.skills__tailwindcss {
   width: 85%;
+}
+
+.skills__nextjs {
+  width: 70%;
+}
+
+.skills__ci {
+  width: 70%;
+}
+
+.skills__laravel {
+  width: 80%;
 }
 
 /* ============= BAR SKILL 3 ============= */
@@ -538,10 +551,6 @@ img {
 
 .skills__indesign {
   width: 85%;
-}
-
-.skills__adobexd {
-  width: 70%;
 }
 
 .skills__figma {
@@ -890,7 +899,6 @@ img {
   }
 
   .about__container,
-  .skills__container,
   .portfolio__content,
   .contact__container,
   .footer__container {
