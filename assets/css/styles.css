@@ -378,6 +378,46 @@ img {
   display: inline-flex;
   align-items: center;
 }
+
+.button__loader {
+  position: relative;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1.2rem 2.75rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  overflow: hidden;
+  cursor: wait;
+}
+
+.button__loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 100%;
+  background: repeating-linear-gradient(60deg, transparent, transparent 0.75rem, var(--first-color-alt) 0.75rem, var(--first-color-alt) 1.5rem);
+  animation: load 1s infinite linear;
+}
+
+.button__text {
+  position: relative;
+}
+
+@keyframes load {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1.75rem);
+  }
+}
+
+.d-none {
+  display: none;
+}
+
 /*==================== ABOUT ====================*/
 .about__illustration {
   background-color: #00adb5;

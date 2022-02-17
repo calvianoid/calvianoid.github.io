@@ -598,9 +598,12 @@
             </div>
 
             <div>
-              <button class="button button--flex" type="submit" style="border: 0; cursor: pointer">
+              <button id="button__send" class="button button--flex" type="submit" style="border: 0; cursor: pointer">
                 Send Message
                 <i class="uil uil-message button__icon"></i>
+              </button>
+              <button class="button__loader d-none" type="submit" style="border: 0">
+                <span class="button__text">Loading...</span>
               </button>
             </div>
           </form>
@@ -661,18 +664,24 @@
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbyaCl4t67BuatDt1B6DmNqF6lH4cBt4e2QePYvhSCt6VeVSAgKnNZb0T4huAHmdUn5j/exec";
       const form = document.forms["cn-contact-form"];
+      const btnSend = document.querySelector("#button__send");
+      const btnLoad = document.querySelector(".button__loader");
       const alert = document.querySelector(".notification__success");
 
       form.addEventListener("submit", (e) => {
+        btnLoad.classList.toggle("d-none");
+        btnSend.classList.toggle("d-none");
         e.preventDefault();
         fetch(scriptURL, { method: "POST", body: new FormData(form) })
           .then((response) => {
             console.log("Success!", response);
+            btnSend.classList.toggle("d-none");
+            btnLoad.classList.toggle("d-none");
             alert.classList.toggle("d-none");
             form.reset();
             setTimeout(() => {
               alert.style.display = "none";
-            }, 3000);
+            }, 5000);
           })
           .catch((error) => console.error("Error!", error.message));
       });
